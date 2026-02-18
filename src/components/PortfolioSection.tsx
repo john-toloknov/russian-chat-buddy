@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import portrait1 from "@/assets/portfolio-portrait-1.jpg";
 import portrait2 from "@/assets/portfolio-portrait-2.jpg";
@@ -163,7 +164,8 @@ const PortfolioSection = () => {
 
       {/* Lightbox */}
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
-        <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 border-none bg-transparent shadow-none [&>button]:hidden">
+        <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 border-none bg-transparent shadow-none [&>button]:hidden" aria-describedby={undefined}>
+          <VisuallyHidden><DialogTitle>Просмотр фотографии</DialogTitle></VisuallyHidden>
           <div className="relative flex items-center justify-center">
             <button
               onClick={() => setLightboxOpen(false)}
