@@ -50,6 +50,12 @@ export default {
         emerald: "hsl(var(--emerald))",
         "emerald-glow": "hsl(var(--emerald-glow))",
         "warm-gray": "hsl(var(--warm-gray))",
+        gold: "hsl(var(--gold))",
+        "gold-glow": "hsl(var(--gold-glow))",
+        rose: "hsl(var(--rose))",
+        "rose-glow": "hsl(var(--rose-glow))",
+        "deep-teal": "hsl(var(--deep-teal))",
+        lavender: "hsl(var(--lavender))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

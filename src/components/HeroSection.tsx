@@ -17,39 +17,46 @@ const HeroSection = () => {
         <img
           src={heroBg}
           alt="Фон"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-105"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-foreground/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/40 to-foreground/80" />
+        {/* Color accent overlays */}
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-emerald/20 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-gold/15 to-transparent" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="font-body text-sm tracking-[0.3em] uppercase text-primary-foreground/80 mb-4"
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          className="inline-block mb-6"
         >
-          Профессиональная фотография
-        </motion.p>
+          <span className="inline-block px-6 py-2 border border-gold/50 rounded-full font-body text-xs tracking-[0.4em] uppercase text-gold">
+            ✦ Профессиональная фотография ✦
+          </span>
+        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold text-primary-foreground mb-6 leading-tight"
+          className="font-display text-6xl md:text-8xl lg:text-9xl font-semibold text-primary-foreground mb-6 leading-[0.9]"
         >
           Кристина
           <br />
-          <span className="italic font-normal">Толокнова</span>
+          <span className="italic font-normal bg-gradient-to-r from-emerald via-gold to-rose bg-clip-text text-transparent">
+            Толокнова
+          </span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-body text-lg text-primary-foreground/80 mb-10 max-w-xl mx-auto"
+          className="font-body text-lg md:text-xl text-primary-foreground/80 mb-12 max-w-xl mx-auto"
         >
           Запечатлю искренние эмоции, важные моменты и настоящие истории вашей жизни
         </motion.p>
@@ -62,13 +69,13 @@ const HeroSection = () => {
         >
           <button
             onClick={scrollToPortfolio}
-            className="px-8 py-3 bg-primary text-primary-foreground font-body text-sm uppercase tracking-widest rounded-sm hover:bg-emerald-glow transition-colors duration-300"
+            className="px-10 py-4 bg-gradient-to-r from-emerald to-emerald-glow text-primary-foreground font-body text-sm uppercase tracking-widest rounded-full hover:shadow-[0_0_30px_hsl(153,53%,53%,0.4)] transition-all duration-300 hover:scale-105"
           >
             Портфолио
           </button>
           <button
             onClick={scrollToContacts}
-            className="px-8 py-3 border border-primary-foreground/40 text-primary-foreground font-body text-sm uppercase tracking-widest rounded-sm hover:bg-primary-foreground/10 transition-colors duration-300"
+            className="px-10 py-4 border-2 border-gold/50 text-gold font-body text-sm uppercase tracking-widest rounded-full hover:bg-gold/10 hover:border-gold transition-all duration-300 hover:scale-105"
           >
             Связаться
           </button>
@@ -85,9 +92,9 @@ const HeroSection = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="w-6 h-10 border-2 border-primary-foreground/40 rounded-full flex justify-center pt-2"
+          className="w-6 h-10 border-2 border-gold/40 rounded-full flex justify-center pt-2"
         >
-          <div className="w-1 h-2 bg-primary-foreground/60 rounded-full" />
+          <div className="w-1 h-2 bg-gold/60 rounded-full" />
         </motion.div>
       </motion.div>
     </section>

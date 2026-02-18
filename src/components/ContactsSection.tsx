@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Instagram, MessageCircle, Send, Mail } from "lucide-react";
+import { Instagram, MessageCircle, Send } from "lucide-react";
 
 const socials = [
   {
@@ -7,31 +7,40 @@ const socials = [
     label: "Instagram",
     href: "https://www.instagram.com/kdavisss07",
     handle: "@kdavisss07",
+    gradient: "from-rose to-gold",
+    glow: "hover:shadow-[0_0_30px_hsl(350,70%,60%,0.3)]",
   },
   {
     icon: MessageCircle,
     label: "WhatsApp",
     href: "https://wa.me/77087383268",
     handle: "+7 708 738 32 68",
+    gradient: "from-emerald to-emerald-glow",
+    glow: "hover:shadow-[0_0_30px_hsl(153,53%,53%,0.3)]",
   },
   {
     icon: Send,
     label: "Telegram",
     href: "https://t.me/Kristna",
     handle: "@Kristna",
+    gradient: "from-gold to-emerald",
+    glow: "hover:shadow-[0_0_30px_hsl(38,80%,55%,0.3)]",
   },
 ];
 
 const ContactsSection = () => {
   return (
-    <section id="contacts" className="section-padding bg-card">
-      <div className="container mx-auto max-w-3xl text-center">
+    <section id="contacts" className="section-padding bg-card relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-rose/5 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-emerald/5 to-transparent rounded-full blur-3xl" />
+
+      <div className="container mx-auto max-w-3xl text-center relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <p className="font-body text-sm tracking-[0.2em] uppercase text-primary mb-3">
+          <p className="font-body text-sm tracking-[0.2em] uppercase bg-gradient-to-r from-emerald to-gold bg-clip-text text-transparent mb-3 font-medium">
             Свяжитесь со мной
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-4">
@@ -54,12 +63,11 @@ const ContactsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group p-6 rounded-lg bg-background border border-border hover:border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className={`group p-6 rounded-2xl bg-background border border-border hover:border-transparent transition-all duration-300 hover:-translate-y-2 ${s.glow}`}
             >
-              <s.icon
-                size={28}
-                className="mx-auto mb-3 text-muted-foreground group-hover:text-primary transition-colors"
-              />
+              <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${s.gradient} mb-3`}>
+                <s.icon size={24} className="text-primary-foreground" />
+              </div>
               <p className="font-body text-sm font-medium text-foreground mb-1">
                 {s.label}
               </p>

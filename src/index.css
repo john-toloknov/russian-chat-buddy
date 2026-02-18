@@ -51,6 +51,12 @@
     --emerald: 153 53% 53%;
     --emerald-glow: 153 53% 63%;
     --warm-gray: 40 10% 75%;
+    --gold: 38 80% 55%;
+    --gold-glow: 38 80% 65%;
+    --rose: 350 70% 60%;
+    --rose-glow: 350 70% 70%;
+    --deep-teal: 175 50% 30%;
+    --lavender: 260 40% 70%;
   }
 
   .dark {

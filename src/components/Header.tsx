@@ -35,18 +35,27 @@ const Header = () => {
     <>
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          scrolled ? "glass-effect shadow-lg py-3" : "bg-transparent py-5"
+          scrolled
+            ? "bg-foreground/90 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.3)] py-2"
+            : "bg-transparent py-5"
         }`}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           <button
             onClick={() => handleNavClick("#home")}
-            className="flex flex-col items-start"
+            className="flex flex-col items-start group"
           >
-            <span className="font-display text-xl md:text-2xl font-semibold text-foreground">
-              Кристина Толокнова
+            <span className={`font-display text-xl md:text-2xl font-semibold transition-colors duration-300 ${
+              scrolled ? "text-primary-foreground" : "text-foreground"
+            }`}>
+              Кристина
+              <span className="bg-gradient-to-r from-emerald to-gold bg-clip-text text-transparent ml-1">
+                Толокнова
+              </span>
             </span>
-            <span className="text-xs font-body tracking-[0.2em] uppercase text-muted-foreground">
+            <span className={`text-xs font-body tracking-[0.2em] uppercase transition-colors duration-300 ${
+              scrolled ? "text-primary-foreground/60" : "text-muted-foreground"
+            }`}>
               Фотограф
             </span>
           </button>
@@ -57,7 +66,9 @@ const Header = () => {
               <button
                 key={item.href}
                 onClick={() => handleNavClick(item.href)}
-                className="font-body text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300 uppercase"
+                className={`font-body text-sm tracking-wide uppercase relative transition-colors duration-300 
+                  after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-emerald after:to-gold after:transition-all after:duration-300 hover:after:w-full
+                  ${scrolled ? "text-primary-foreground/70 hover:text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
               >
                 {item.label}
               </button>
@@ -67,7 +78,7 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-foreground"
+            className={`md:hidden p-2 transition-colors ${scrolled ? "text-primary-foreground" : "text-foreground"}`}
             aria-label="Меню"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -82,7 +93,7 @@ const Header = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-md flex flex-col items-center justify-center"
+            className="fixed inset-0 z-40 bg-foreground/95 backdrop-blur-md flex flex-col items-center justify-center"
           >
             <nav className="flex flex-col items-center gap-8">
               {navItems.map((item, i) => (
@@ -92,7 +103,7 @@ const Header = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   onClick={() => handleNavClick(item.href)}
-                  className="font-display text-3xl text-foreground hover:text-primary transition-colors"
+                  className="font-display text-3xl text-background hover:text-emerald transition-colors"
                 >
                   {item.label}
                 </motion.button>
@@ -106,7 +117,7 @@ const Header = () => {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-foreground/10 text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  className="p-3 rounded-full bg-background/10 text-background hover:bg-emerald hover:text-primary-foreground transition-all duration-300"
                   aria-label={s.label}
                 >
                   <s.icon size={22} />
