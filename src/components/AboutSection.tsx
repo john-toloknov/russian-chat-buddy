@@ -55,14 +55,14 @@ const AboutSection = () => {
               совершенствую свои навыки. Каждая съёмка для меня — это уникальный
               творческий процесс, в котором мы вместе создаём нечто особенное.
             </p>
-            <div className="flex gap-8">
+            <div className="flex flex-wrap gap-6 sm:gap-8">
               {[
                 { value: "5+", label: "Лет опыта", color: "from-emerald to-emerald-glow" },
                 { value: "500+", label: "Фотосессий", color: "from-gold to-gold-glow" },
                 { value: "100%", label: "Довольных клиентов", color: "from-rose to-rose-glow" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <span className={`font-display text-3xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+                  <span className={`font-display text-2xl sm:text-3xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
                     {stat.value}
                   </span>
                   <p className="font-body text-sm text-muted-foreground mt-1">{stat.label}</p>

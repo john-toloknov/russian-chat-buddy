@@ -34,7 +34,7 @@ const HeroSection = () => {
           transition={{ duration: 1 }}
           className="inline-block mb-6"
         >
-          <span className="inline-block px-6 py-2 border border-gold/50 rounded-full font-body text-xs tracking-[0.4em] uppercase text-gold">
+          <span className="inline-block px-4 sm:px-6 py-2 border border-gold/50 rounded-full font-body text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.4em] uppercase text-gold">
             ✦ Профессиональная фотография ✦
           </span>
         </motion.div>
@@ -43,7 +43,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-display text-6xl md:text-8xl lg:text-9xl font-semibold text-primary-foreground mb-6 leading-[0.9]"
+          className="font-display text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-semibold text-primary-foreground mb-4 sm:mb-6 leading-[0.9]"
         >
           Кристина
           <br />
@@ -56,7 +56,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-body text-lg md:text-xl text-primary-foreground/80 mb-12 max-w-xl mx-auto"
+          className="font-body text-base sm:text-lg md:text-xl text-primary-foreground/80 mb-8 sm:mb-12 max-w-xl mx-auto px-2"
         >
           Запечатлю искренние эмоции, важные моменты и настоящие истории вашей жизни
         </motion.p>
@@ -69,13 +69,13 @@ const HeroSection = () => {
         >
           <button
             onClick={scrollToPortfolio}
-            className="px-10 py-4 bg-gradient-to-r from-emerald to-emerald-glow text-primary-foreground font-body text-sm uppercase tracking-widest rounded-full hover:shadow-[0_0_30px_hsl(153,53%,53%,0.4)] transition-all duration-300 hover:scale-105"
+            className="px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-emerald to-emerald-glow text-primary-foreground font-body text-sm uppercase tracking-widest rounded-full hover:shadow-[0_0_30px_hsl(153,53%,53%,0.4)] transition-all duration-300 hover:scale-105"
           >
             Портфолио
           </button>
           <button
             onClick={scrollToContacts}
-            className="px-10 py-4 border-2 border-gold/50 text-gold font-body text-sm uppercase tracking-widest rounded-full hover:bg-gold/10 hover:border-gold transition-all duration-300 hover:scale-105"
+            className="px-8 sm:px-10 py-3 sm:py-4 border-2 border-gold/50 text-gold font-body text-sm uppercase tracking-widest rounded-full hover:bg-gold/10 hover:border-gold transition-all duration-300 hover:scale-105"
           >
             Связаться
           </button>

@@ -57,9 +57,9 @@ const PricingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className={`rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-2 group ${
+              className={`rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 hover:-translate-y-2 group ${
                 plan.featured
-                  ? "bg-foreground text-background shadow-[0_20px_60px_-15px_hsl(38,80%,55%,0.3)] scale-105"
+                  ? "bg-foreground text-background shadow-[0_20px_60px_-15px_hsl(38,80%,55%,0.3)] md:scale-105"
                   : "bg-card border border-border hover:shadow-xl"
               }`}
             >

@@ -54,7 +54,7 @@ const ContactsSection = () => {
 
 
 
-        <div className="grid sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
           {socials.map((s, i) => (
             <motion.a
               key={s.label}
