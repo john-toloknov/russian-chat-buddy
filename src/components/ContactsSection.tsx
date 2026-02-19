@@ -52,6 +52,26 @@ const ContactsSection = () => {
           </p>
         </motion.div>
 
+        {/* Telegram CTA */}
+        <motion.a
+          href="https://t.me/Kristna"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="group block mb-12 p-8 rounded-2xl bg-gradient-to-r from-[hsl(200,80%,50%)] to-[hsl(210,90%,45%)] text-white shadow-lg hover:shadow-[0_0_40px_hsl(200,80%,50%,0.4)] transition-all duration-300 hover:-translate-y-1"
+        >
+          <Send size={36} className="mx-auto mb-4 group-hover:scale-110 transition-transform" />
+          <h3 className="font-display text-2xl font-semibold mb-2">Заказать съёмку в Telegram</h3>
+          <p className="font-body text-white/80 text-sm mb-4">
+            Напишите мне — обсудим формат, дату и место съёмки
+          </p>
+          <span className="inline-block font-body text-sm font-medium bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-full group-hover:bg-white/30 transition-colors">
+            Написать @Kristna →
+          </span>
+        </motion.a>
+
         <div className="grid sm:grid-cols-3 gap-6">
           {socials.map((s, i) => (
             <motion.a
