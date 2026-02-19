@@ -36,8 +36,8 @@ const Header = () => {
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-foreground/90 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.3)] py-2"
-            : "bg-transparent py-5"
+            ? "bg-foreground/90 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.3)] py-2 translate-y-0 opacity-100"
+            : "-translate-y-full opacity-0 pointer-events-none py-5"
         }`}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
