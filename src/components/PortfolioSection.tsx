@@ -119,7 +119,7 @@ const PortfolioSection = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.4 }}
-                className="aspect-[4/3] rounded-2xl overflow-hidden shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)] mb-6 cursor-pointer group"
+                className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)] mb-6 cursor-pointer group"
                 onClick={() => openLightbox(activeCategory, activeImage)}
               >
                 <img
