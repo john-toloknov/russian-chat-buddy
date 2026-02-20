@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
@@ -166,7 +166,21 @@ const PortfolioSection = () => {
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
         <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 border-none bg-transparent shadow-none [&>button]:hidden" aria-describedby={undefined}>
           <VisuallyHidden><DialogTitle>Просмотр фотографии</DialogTitle></VisuallyHidden>
-          <div className="relative flex items-center justify-center">
+          <div
+            className="relative flex items-center justify-center"
+            onTouchStart={(e) => {
+              const touch = e.touches[0];
+              (e.currentTarget as any)._touchStartX = touch.clientX;
+            }}
+            onTouchEnd={(e) => {
+              const startX = (e.currentTarget as any)._touchStartX;
+              if (startX == null) return;
+              const diff = e.changedTouches[0].clientX - startX;
+              if (Math.abs(diff) > 50) {
+                diff > 0 ? lightboxPrev() : lightboxNext();
+              }
+            }}
+          >
             <button
               onClick={() => setLightboxOpen(false)}
               className="absolute top-2 right-2 z-10 w-10 h-10 rounded-full bg-foreground/70 backdrop-blur-sm flex items-center justify-center text-background hover:bg-foreground transition-colors"
