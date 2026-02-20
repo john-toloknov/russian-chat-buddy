@@ -184,7 +184,7 @@ const PortfolioSection = () => {
                 </button>
                 <button
                   onClick={lightboxNext}
-                  className="absolute right-14 z-10 w-10 h-10 rounded-full bg-foreground/70 backdrop-blur-sm flex items-center justify-center text-background hover:bg-foreground transition-colors"
+                  className="absolute right-2 z-10 w-10 h-10 rounded-full bg-foreground/70 backdrop-blur-sm flex items-center justify-center text-background hover:bg-foreground transition-colors"
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>
