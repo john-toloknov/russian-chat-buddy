@@ -54,7 +54,8 @@ const ContactsSection = () => {
 
 
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+        {/* Desktop: cards grid */}
+        <div className="hidden sm:grid grid-cols-3 gap-6">
           {socials.map((s, i) => (
             <motion.a
               key={s.label}
@@ -74,6 +75,26 @@ const ContactsSection = () => {
                 {s.label}
               </p>
               <p className="font-body text-xs text-muted-foreground">{s.handle}</p>
+            </motion.a>
+          ))}
+        </div>
+
+        {/* Mobile: inline icon row */}
+        <div className="flex sm:hidden justify-center gap-6">
+          {socials.map((s, i) => (
+            <motion.a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className={`flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r ${s.gradient} transition-all duration-300 active:scale-95`}
+              aria-label={s.label}
+            >
+              <s.icon size={22} className="text-primary-foreground" />
             </motion.a>
           ))}
         </div>

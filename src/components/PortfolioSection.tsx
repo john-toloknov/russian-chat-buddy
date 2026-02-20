@@ -1,8 +1,8 @@
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, MoveHorizontal } from "lucide-react";
 import portrait1 from "@/assets/portfolio-portrait-1.jpg";
 import portrait2 from "@/assets/portfolio-portrait-2.jpg";
 import landscape1 from "@/assets/portfolio-landscape-1.jpg";
@@ -45,6 +45,15 @@ const PortfolioSection = () => {
   const [activeImage, setActiveImage] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [showSwipeHint, setShowSwipeHint] = useState(false);
+
+  useEffect(() => {
+    if (lightboxOpen && window.innerWidth < 640) {
+      setShowSwipeHint(true);
+      const timer = setTimeout(() => setShowSwipeHint(false), 2500);
+      return () => clearTimeout(timer);
+    }
+  }, [lightboxOpen]);
 
   const currentCategory = categories.find((c) => c.id === activeCategory)!;
 
@@ -214,6 +223,27 @@ const PortfolioSection = () => {
               alt="Фото в полном размере"
               className="max-w-full max-h-[90vh] object-contain rounded-lg"
             />
+
+            {/* Swipe hint for mobile */}
+            <AnimatePresence>
+              {showSwipeHint && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none"
+                >
+                  <motion.div
+                    animate={{ x: [0, 30, -30, 0] }}
+                    transition={{ duration: 1.5, repeat: 1, ease: "easeInOut" }}
+                    className="flex items-center gap-2 bg-foreground/70 backdrop-blur-sm px-5 py-3 rounded-full"
+                  >
+                    <MoveHorizontal className="w-5 h-5 text-background" />
+                    <span className="font-body text-sm text-background">Свайпните</span>
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 font-body text-sm text-background/70 bg-foreground/50 px-3 py-1 rounded-full backdrop-blur-sm">
               {lightboxIndex + 1} / {allImages.length}
