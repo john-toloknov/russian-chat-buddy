@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Instagram, MessageCircle, Send } from "lucide-react";
+import { Instagram, Send } from "lucide-react";
 
 const socials = [
   {
@@ -11,18 +11,10 @@ const socials = [
     glow: "hover:shadow-[0_0_30px_hsl(350,70%,60%,0.3)]",
   },
   {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    href: "https://wa.me/77087383268",
-    handle: "+7 708 738 32 68",
-    gradient: "from-emerald to-emerald-glow",
-    glow: "hover:shadow-[0_0_30px_hsl(153,53%,53%,0.3)]",
-  },
-  {
     icon: Send,
     label: "Telegram",
-    href: "https://t.me/Kristna",
-    handle: "@Kristna",
+    href: "https://t.me/kristina_toloknova_bot",
+    handle: "@kristina_toloknova_bot",
     gradient: "from-gold to-emerald",
     glow: "hover:shadow-[0_0_30px_hsl(38,80%,55%,0.3)]",
   },
@@ -55,7 +47,7 @@ const ContactsSection = () => {
 
 
         {/* Desktop: cards grid */}
-        <div className="hidden sm:grid grid-cols-3 gap-6">
+        <div className="hidden sm:grid grid-cols-2 gap-6 max-w-lg mx-auto">
           {socials.map((s, i) => (
             <motion.a
               key={s.label}
