@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Instagram, MessageCircle, Send } from "lucide-react";
+import { Menu, X, Instagram, Send } from "lucide-react";
 
 const navItems = [
   { label: "Главная", href: "#home" },
@@ -11,8 +11,7 @@ const navItems = [
 
 const socials = [
   { icon: Instagram, href: "https://www.instagram.com/kdavisss07", label: "Instagram" },
-  { icon: MessageCircle, href: "https://wa.me/77087383268", label: "WhatsApp" },
-  { icon: Send, href: "https://t.me/Kristna", label: "Telegram" },
+  { icon: Send, href: "https://t.me/kristina_toloknova_bot", label: "Telegram" },
 ];
 
 const Header = () => {
