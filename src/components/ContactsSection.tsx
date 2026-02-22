@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { Instagram, Send } from "lucide-react";
+import InstagramIcon from "./icons/InstagramIcon";
+import TelegramIcon from "./icons/TelegramIcon";
 
 const socials = [
   {
-    icon: Instagram,
+    icon: InstagramIcon,
     label: "Instagram",
     href: "https://www.instagram.com/kdavisss07",
     handle: "@kdavisss07",
@@ -11,7 +12,7 @@ const socials = [
     glow: "hover:shadow-[0_0_30px_hsl(350,70%,60%,0.3)]",
   },
   {
-    icon: Send,
+    icon: TelegramIcon,
     label: "Telegram",
     href: "https://t.me/kristina_toloknova_bot",
     handle: "@kristina_toloknova_bot",
@@ -60,8 +61,8 @@ const ContactsSection = () => {
               transition={{ delay: i * 0.1 }}
               className={`group p-6 rounded-2xl bg-background border border-border hover:border-transparent transition-all duration-300 hover:-translate-y-2 ${s.glow}`}
             >
-              <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${s.gradient} mb-3`}>
-                <s.icon size={24} className="text-primary-foreground" />
+              <div className="inline-flex mb-3">
+                <s.icon size={40} />
               </div>
               <p className="font-body text-sm font-medium text-foreground mb-1">
                 {s.label}
@@ -83,10 +84,10 @@ const ContactsSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r ${s.gradient} transition-all duration-300 active:scale-95`}
+              className="flex items-center justify-center w-14 h-14 transition-all duration-300 active:scale-95"
               aria-label={s.label}
             >
-              <s.icon size={22} className="text-primary-foreground" />
+              <s.icon size={48} />
             </motion.a>
           ))}
         </div>
