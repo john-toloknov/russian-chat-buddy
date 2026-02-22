@@ -31,7 +31,10 @@ const FloatingTelegram = () => {
           className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center"
           aria-label="Написать в Telegram"
         >
-          <TelegramIcon size={56} />
+          {/* Pulse rings */}
+          <span className="absolute inset-0 rounded-full animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] bg-[#37AEE2]/30" />
+          <span className="absolute inset-0 rounded-full animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite_0.6s] bg-[#37AEE2]/20" />
+          <TelegramIcon size={56} className="relative z-10" />
         </motion.a>
       )}
     </AnimatePresence>
