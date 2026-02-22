@@ -5,6 +5,7 @@ import PortfolioSection from "@/components/PortfolioSection";
 import PricingSection from "@/components/PricingSection";
 import ContactsSection from "@/components/ContactsSection";
 import Footer from "@/components/Footer";
+import FloatingTelegram from "@/components/FloatingTelegram";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <PricingSection />
       <ContactsSection />
       <Footer />
+      <FloatingTelegram />
     </div>
   );
 };

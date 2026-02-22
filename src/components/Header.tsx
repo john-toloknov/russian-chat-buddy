@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Instagram, Send } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import InstagramIcon from "./icons/InstagramIcon";
+import TelegramIcon from "./icons/TelegramIcon";
 
 const navItems = [
   { label: "Главная", href: "#home" },
@@ -10,8 +12,8 @@ const navItems = [
 ];
 
 const socials = [
-  { icon: Instagram, href: "https://www.instagram.com/kdavisss07", label: "Instagram" },
-  { icon: Send, href: "https://t.me/kristina_toloknova_bot", label: "Telegram" },
+  { icon: InstagramIcon, href: "https://www.instagram.com/kdavisss07", label: "Instagram" },
+  { icon: TelegramIcon, href: "https://t.me/kristina_toloknova_bot", label: "Telegram" },
 ];
 
 const Header = () => {
@@ -116,10 +118,10 @@ const Header = () => {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-background/10 text-background hover:bg-emerald hover:text-primary-foreground transition-all duration-300"
+                  className="p-2 rounded-full hover:scale-110 transition-all duration-300"
                   aria-label={s.label}
                 >
-                  <s.icon size={22} />
+                  <s.icon size={32} />
                 </a>
               ))}
             </div>
