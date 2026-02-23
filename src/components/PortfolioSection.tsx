@@ -176,7 +176,7 @@ const PortfolioSection = () => {
         <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 border-none bg-transparent shadow-none [&>button]:hidden" aria-describedby={undefined}>
           <VisuallyHidden><DialogTitle>Просмотр фотографии</DialogTitle></VisuallyHidden>
           <div
-            className="relative flex items-center justify-center"
+            className="relative w-[95vw] h-[95vh] flex items-center justify-center"
             onTouchStart={(e) => {
               const touch = e.touches[0];
               (e.currentTarget as any)._touchStartX = touch.clientX;
@@ -201,13 +201,13 @@ const PortfolioSection = () => {
               <>
                 <button
                   onClick={lightboxPrev}
-                  className="absolute left-2 z-10 w-10 h-10 rounded-full bg-foreground/70 backdrop-blur-sm flex items-center justify-center text-background hover:bg-foreground transition-colors"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-foreground/70 backdrop-blur-sm flex items-center justify-center text-background hover:bg-foreground transition-colors"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={lightboxNext}
-                  className="absolute right-2 z-10 w-10 h-10 rounded-full bg-foreground/70 backdrop-blur-sm flex items-center justify-center text-background hover:bg-foreground transition-colors"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-foreground/70 backdrop-blur-sm flex items-center justify-center text-background hover:bg-foreground transition-colors"
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>
